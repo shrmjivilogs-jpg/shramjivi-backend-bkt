@@ -1,0 +1,116 @@
+:root {
+  --ms-blue: #0078d4;
+  --ms-bg: #f3f2f1;
+  --ms-border: #edebe9;
+  --ms-text: #323130;
+}
+
+/* Fixed Layout Container */
+.ms-main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 48px);
+}
+
+.gen-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--ms-bg);
+}
+
+/* Card Styling */
+.gen-card {
+  background: white;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px;
+  border: 1px solid var(--ms-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.gen-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00188f;
+  margin-bottom: 8px;
+}
+
+.gen-header p {
+  font-size: 13px;
+  color: #605e5c;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.gen-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Styles */
+.gen-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ms-text);
+}
+
+.gen-field input, .gen-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #8a8886;
+  font-size: 14px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.gen-field input:focus, .gen-field select:focus {
+  border-color: var(--ms-blue);
+  outline: none;
+}
+
+/* Consent Area */
+.gen-consent {
+  display: flex;
+  gap: 12px;
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 2px;
+  border-left: 4px solid var(--ms-blue);
+}
+
+.gen-consent input {
+  margin-top: 3px;
+}
+
+.gen-consent label {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #605e5c;
+  cursor: pointer;
+}
+
+/* Buttons */
+.gen-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.gen-submit {
+  min-width: 160px;
+}
+
+/* Header & Sidebar overrides for consistency */
+.ms-user-info { display: flex; align-items: center; gap: 12px; }
+.ms-user-text { display: flex; flex-direction: column; text-align: right; }
+.ms-name { font-size: 13px; font-weight: 600; }
+.ms-role { font-size: 11px; opacity: 0.8; }
+.ms-user-info img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }

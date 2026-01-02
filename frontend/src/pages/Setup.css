@@ -1,0 +1,206 @@
+:root {
+  --ms-blue: #0078d4;
+  --ms-bg: #f3f2f1;
+  --ms-border: #edebe9;
+  --ms-text: #323130;
+}
+
+body, html { margin: 0; padding: 0; overflow: hidden; height: 100vh; background: var(--ms-bg); }
+
+.ms-viewport { display: flex; flex-direction: column; height: 100vh; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+.ms-top-nav { height: 48px; background: #00188f; color: white; display: flex; align-items: center; padding: 0 20px; }
+.ms-logo-section { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+.ms-square-logo { width: 24px; height: 24px; background: white; color: #00188f; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+
+.ms-main-container { display: flex; flex: 1; overflow: hidden; }
+
+.ms-sidebar { width: 280px; background: white; border-right: 1px solid var(--ms-border); padding: 40px; display: flex; flex-direction: column; }
+.ms-sidebar-title { font-size: 22px; font-weight: 600; margin-bottom: 30px; }
+.ms-step-item { padding: 12px 15px; font-size: 14px; color: #605e5c; border-left: 4px solid transparent; }
+.ms-step-item.active { color: var(--ms-blue); font-weight: 600; border-left-color: var(--ms-blue); background: #f3f9ff; }
+
+.ms-system-info { margin-top: auto; font-size: 11px; color: #a19f9d; line-height: 1.6; }
+.ms-meta-tag { font-weight: 800; color: #00188f; margin-bottom: 5px; }
+
+.ms-content-area { flex: 1; display: flex; flex-direction: column; background: var(--ms-bg); }
+.ms-step-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+
+.ms-step-pane { background: white; width: 100%; max-width: 750px; padding: 30px; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.ms-pane-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; border-bottom: 1px solid var(--ms-border); padding-bottom: 10px; }
+
+/* Profile Avatar Upload - Fixed Centering */
+.ms-profile-section { display: flex; justify-content: center; margin-bottom: 20px; }
+.ms-avatar-circle { 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  border: 1px solid #8a8886; 
+  position: relative; 
+  display: flex; /* Added for centering text */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  background-color: #fafafa;
+  color: #605e5c;
+  font-size: 12px;
+}
+.ms-avatar-circle img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  position: absolute; /* Sits on top of the 'Picture' text */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.ms-avatar-edit { 
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  background: var(--ms-blue); 
+  color: white; 
+  padding: 2px 8px; 
+  font-size: 10px; 
+  cursor: pointer; 
+  border-radius: 10px; 
+  z-index: 2; /* Sits on top of image */
+}
+
+/* Review Section Specifics */
+.ms-review-container { 
+  background: #faf9f8; 
+  padding: 20px; 
+  font-size: 13px; 
+  line-height: 1.6; 
+  border: 1px solid var(--ms-border); 
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+
+.ms-review-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ms-border);
+  margin-bottom: 20px;
+}
+
+.ms-review-avatar-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.ms-review-avatar-small img { width: 100%; height: 100%; object-fit: cover; }
+.ms-review-title-group h3 { margin: 0; font-size: 16px; font-weight: 600; }
+.ms-review-title-group p { margin: 2px 0 0 0; font-size: 12px; color: #605e5c; }
+
+.ms-review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.ms-review-box, .ms-review-audit { padding: 15px; background: white; border: 1px solid var(--ms-border); margin-bottom: 10px; }
+.ms-review-box h4, .ms-review-audit h4 { font-size: 10px; text-transform: uppercase; color: var(--ms-blue); margin-top: 0; margin-bottom: 10px; }
+
+.ms-review-row { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid #f3f2f1; padding-bottom: 3px; }
+.ms-tag-success { background: #dff6dd; color: #107c10; padding: 1px 5px; font-size: 10px; font-weight: 600; border-radius: 2px; }
+
+/* Grid & Inputs */
+.ms-input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.ms-input-grid-three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.ms-field.ms-full { grid-column: span 2; }
+.ms-field label { display: block; font-size: 12px; margin-bottom: 5px; color: var(--ms-text); font-weight: 600; }
+.ms-field input { width: 100%; border: 1px solid #8a8886; padding: 8px 10px; font-size: 13px; box-sizing: border-box; }
+
+/* OTP Logic */
+.ms-verify-row { display: flex; gap: 5px; }
+.ms-otp-row { display: flex; gap: 5px; margin-top: 5px; }
+.ms-otp-row input { width: 120px; }
+.ms-otp-row button { background: white; border: 1px solid var(--ms-blue); color: var(--ms-blue); padding: 0 10px; cursor: pointer; }
+.ms-btn-small { background: var(--ms-blue); color: white; border: none; padding: 0 10px; font-size: 11px; cursor: pointer; white-space: nowrap; }
+
+/* Footer */
+.ms-footer-actions { height: 64px; background: white; border-top: 1px solid var(--ms-border); display: flex; align-items: center; justify-content: flex-end; padding: 0 40px; gap: 10px; }
+.ms-btn-primary { background: var(--ms-blue); color: white; border: none; padding: 8px 25px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.ms-btn-secondary { background: white; border: 1px solid #8a8886; padding: 8px 25px; cursor: pointer; font-size: 14px; }
+
+/* Professional Review Container */
+.ms-review-container {
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #e1dfdd;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108);
+  margin-bottom: 24px;
+}
+
+/* Enhanced Legal Notice Box */
+.ms-legal-notice {
+  background: #fdfdfd;
+  border: 1px solid #d1d1d1;
+  border-left: 4px solid #0078d4; /* Blue accent for authority */
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.ms-legal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ms-legal-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ms-legal-body p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #605e5c;
+  margin: 0 0 10px 0;
+}
+
+.ms-audit-highlight {
+  font-family: 'Consolas', monospace;
+  background: #f3f2f1;
+  padding: 2px 4px;
+  color: #00188f;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.ms-legal-subtext {
+  font-size: 11px !important;
+  font-style: italic;
+  color: #a19f9d !important;
+}
+
+.ms-consent-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #edebe9;
+  margin-top: 10px;
+}
+
+.ms-consent-checkbox-wrapper label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  cursor: pointer;
+}
+
+.ms-consent-checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
