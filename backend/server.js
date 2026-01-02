@@ -83,15 +83,7 @@ const ADMIN_USERS = [
     lastName: "Kumar Taye",
     zone: "NFR"
   },
-  {
-    username: "user1",
-    password: "123456",
-    id: "ADM-2025-001",
-    firstName: "Shramjivi",
-    lastName: "Admin",
-    zone: "NFR"
-  }
-];
+  ];
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
@@ -112,7 +104,7 @@ app.get('/api/profile/:id', (req, res) => {
 // Sequential form logic (UNCHANGED)
 const getNextFormNumber = async (zone) => {
   let counter = await Counter.findOne();
-  counter = await Counter.create({ lastId: 500 });  // 501-1000
+  if (!counter) counter = await Counter.create({ lastId: 500 });
   
   counter.lastId += 1;
   await counter.save();
@@ -121,6 +113,7 @@ const getNextFormNumber = async (zone) => {
   const zoneCode = zone ? zone.toUpperCase() : 'NA';
   return `SGWC/${zoneCode}/${paddedId}`;
 };
+
 
 app.get('/api/workers', async (req, res) => {
   const workers = await Worker.find().sort({ createdAt: -1 });
